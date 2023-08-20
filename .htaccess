@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} ^http://www.kencomp.net/OldSiteFeb23.*$ [NC]
+RewriteRule ^(.*)$ http://www.kencomp.net/OldSiteFeb23/$1 [L,R=301]
+
+
+RedirectMatch 301 ^/account /myaccount.html
+
+
+
+
+# Don't rewrite secure images (secure error fix)
+RewriteRule \.(css|jpe?g|gif|png)$ - [L]
+
+# Tidy index.etc to / and any other variant to / where relevant
+RewriteCond %{THE_REQUEST} ^GET\ .*/index\.(php|html|htm)\ HTTP
+RewriteRule ^(.*)index\.(php|html|htm)$ http://www.kencomp.net/$1 [R=301,L]
+
+# Homepage folder setup
+#RewriteRule ^$ homepage/index.htm [L,QSA]
+
+ErrorDocument 404 /404.php
+ErrorDocument 505 /404.php
+
+Options -Indexes
