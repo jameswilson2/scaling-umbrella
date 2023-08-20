@@ -1,0 +1,28 @@
+/* -----------------------------------------------
+   CSS Framework v2.0 - IE 5.x Specifics
+	 Please use freely to make your site work!
+----------------------------------------------- */
+
+#accessibility { display:none; }
+
+/* ----------------------
+   Interface CSS
+---------------------- */
+
+/* Cradle of Life Hack! */
+body { text-align:center; }
+hr { margin:0 0 16px 0; }
+#col-a table { width:450px!important; }
+#col-b table,
+#col-c table { width:193px!important; }
+table caption,
+table th,
+table td { font-size:12px!important; }
+
+.clear { font-size:0.1px; line-height:0; }
+
+#container { text-align:left; }
+
+/* ----------------------
+   Content CSS
+---------------------- */

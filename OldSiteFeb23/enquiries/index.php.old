@@ -1,0 +1,149 @@
+<?php
+require_once 'library/security/_access.inc.php';
+require_once 'library/captcha.class.php';
+require_once 'files/_php_builder.class.php';
+
+ob_start();
+
+
+
+?>
+<div class="map_left">
+	<?php
+		echo file_get_contents('_content.inc');
+	?>
+</div>
+<div id="googleMap"></div>
+<div class="clearspace"></div>
+<div id="dirctionsresults"></div>
+<div class="break_line"></div>
+<h2 class="colour">Contact Us</h2>
+<p>Enter your details and we will contact you as soon as possible.</p>
+<div class="trds contactform cs">
+
+<?php if($_GET['error']==1): ?>
+<div class="sck-error-box">
+	<p><strong>There were errors in submitting your details - please check and complete.</strong><br />
+	If you are getting "Considered as SPAM", please remove any HTML formatting from the relevant field. This includes the character &lt; unfortunately.</p>
+</div>
+<?php endif ?>
+
+<form id="sck-form" method="post" action="enquiries/sendmail.php">
+
+<div class="trd">
+<?php if($_GET['name']==1): ?>
+<div class="sck-error-p">Your name is considered as SPAM - please review.</div>
+
+<?php elseif($_GET['name']==2): ?>
+<div class="sck-error-p">Please enter your name.</div>
+<?php endif ?>
+
+<label for="formName"><strong>Your Name:</strong></label>
+<input type="text" name="formName" id="formName" class="field" value="<?php echo $_SESSION['name']; ?>" />
+</div>
+
+<div class="trd">
+<?php if($_GET['email']==1): ?>
+<div class="sck-error-p">Please enter a valid email address.</div>
+<?php elseif($_GET['email']==2): ?>
+<div class="sck-error-p">Your email address is considered as SPAM - please review.</div>
+<?php elseif($_GET['email']==3): ?>
+<div class="sck-error-p">Please enter your email address.</div>
+<?php endif ?>
+
+<label for="formEmail"><strong>Email Address:</strong></label>
+<input type="text" name="formEmail" id="formEmail" class="field" value="<?php echo $_SESSION['email']; ?>" />
+</div>
+
+<div class="trd">
+<?php if($_GET['tel']==1): ?>
+<div class="sck-error-p">Your telephone number is considered as SPAM - please review.</div>
+
+<?php elseif($_GET['tel']==2): ?>
+<div class="sck-error-p">Please enter your telephone number.</div>
+<?php endif ?>
+<label for="formTele"><strong>Telephone Number:</strong></label>
+<input type="text" name="formTele" id="formTele" class="field" value="<?php echo $_SESSION['telephone']; ?>" />
+</div>
+
+<div class="trd">
+<label for="formService"><strong>Type of Service Required:</strong></label>
+<input type="text" name="formService" id="formService" class="field" value="<?php echo $_SESSION['servicerequired']; ?>" />
+</div>
+
+<div class="trd">
+<label for="formAddress"><strong>Address:</strong></label>
+<input type="text" name="formAddress" id="formAddress" class="field" value="<?php echo $_SESSION['address']; ?>" />
+</div>
+
+<div class="trd">
+<label for="formPostcode"><strong>Post Code:</strong></label>
+<input type="text" name="formPostcode" id="formPostcode" class="field" value="<?php echo $_SESSION['postcode']; ?>" />
+</div>
+
+<div class="twotrd">
+<?php if($_GET['mes']==1): ?>
+<div class="sck-error-p">Your message is considered as SPAM - please review.</div>
+<?php elseif($_GET['mes']==2): ?>
+<div class="sck-error-p">Please enter your message.</div>
+<?php endif ?>
+
+<label for="formMessage"><strong>Your Message:</strong></label>
+<textarea cols="20" id="formMessage" name="formMessage" class="field"><?php echo $_SESSION['message']; ?></textarea>
+</div>
+
+<div class="clear"></div>
+<?php if(!$_SESSION['captcha_done']):
+
+	$human_test = Captcha::generateArithmeticProblem();
+	$human_test_problem = $human_test->getPresentation();
+	$human_test_key = $human_test->getKey();
+	$human_test->saveToSession();
+?>
+	<div class="trd">
+	<?php if($_GET['human_test']==1): ?>
+	<div class="sck-error-p">Please solve the problem as it appears below.</div>
+	<?php endif ?>
+	<br />
+	<label for="human_test"><strong>Spam filter <img src="presentation/question.gif" id="spam_filter_info" title="This is a protection feature against automated form submission." alt="This is a protection feature against automated form submission."/>:</strong></label>
+		<span class="other">Solve this problem: <?php echo $human_test_problem;?> <input type="text" name="human_test" id="human_test" size="3" />
+		</span>
+		<input type="hidden" name="human_test_key" value="<?php echo $human_test_key; ?>" />
+	</div>
+<?php endif ?>
+<br />
+
+	<div class="trd">
+		<div class="clear5px"></div><button type="submit" class="btn rbtn">&gt; Submit Form</button>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="clearspace"></div>
+
+<p>Data sent from this form is recorded in line with our <a href="privacypolicy.htm">Privacy Policy</a>.</p>
+
+<div class="clear"></div>
+</form>
+
+<?php
+
+$title = "Contact Us - ".SITE_NAME;
+$description = "Contact Us - ".SITE_NAME;
+$keywords = "Contact Us - ".SITE_NAME;
+
+$content = ob_get_contents();
+ob_end_clean();
+
+$page = new PHPBuilder();
+
+$page->setTitle($title);
+$page->setDescription($description);
+$page->setKeywords($keywords);
+$page->setContent($content);
+
+$page_content = $page->buildPage();
+
+echo $page_content;
+
+?>

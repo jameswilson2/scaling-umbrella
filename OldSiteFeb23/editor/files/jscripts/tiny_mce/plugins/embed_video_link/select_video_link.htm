@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>Insert Video Link</title>
+	
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="../../utils/mctabs.js"></script>
+	<script type="text/javascript" src="../../utils/form_utils.js"></script>
+	<script type="text/javascript" src="../../utils/validate.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script>
+	<style type="text/css">
+		#image-container img{cursor:pointer; margin:0.5em; border:1px solid #919B9C;}
+	</style>
+</head>
+<body id="table" style="display: none" role="application" aria-labelledby="app_title">
+	<span style="display:none;" id="app_title">{#table_dlg.title}</span>
+	<form onsubmit="return false;" action="#">
+
+		<div class="panel_wrapper">
+			
+			<label for="image_1"><input type="radio" id="image_1" name="image" value="play-clacker.gif" /> <img src="../../../../../presentation/play-clacker.gif" alt="Play Clacker" /></label>
+			<label for="image_2"><input type="radio" id="image_2" name="image" value="play-video.gif" checked="checked" /> <img src="../../../../../presentation/play-video.gif" alt="Play Video" /></label>
+			<label for="image_3"><input type="radio" id="image_3" name="image" value="play-video-red.gif" /> <img src="../../../../../presentation/play-video-red.gif" alt="Play Video red" /></label>
+			<label for="image_4"><input type="radio" id="image_4" name="image" value="play-video-blue.gif" /> <img src="../../../../../presentation/play-video-blue.gif" alt="Play Video blue" /></label>
+			<label for="image_5"><input type="radio" id="image_5" name="image" value="play-video-green.gif" /> <img src="../../../../../presentation/play-video-green.gif" alt="Play Video green" /></label>
+			<label for="image_6"><input type="radio" id="image_6" name="image" value="play-video-light-blue.gif" /> <img src="../../../../../presentation/play-video-light-blue.gif" alt="Play Video light blue" /></label>
+			<label for="image_7"><input type="radio" id="image_7" name="image" value="play-video-orange.gif" /> <img src="../../../../../presentation/play-video-orange.gif" alt="Play Video orange" /></label>
+			<label for="image_8"><input type="radio" id="image_8" name="image" value="play-video-purple.gif" /> <img src="../../../../../presentation/play-video-purple.gif" alt="Play Video purple" /></label>
+			<label for="image_9"><input type="radio" id="image_9" name="image" value="play-video-yellow.gif" /> <img src="../../../../../presentation/play-video-yellow.gif" alt="Play Video yellow" /></label>
+			
+			<div id="image-container">&nbsp;</div>
+			
+			<script type="text/javascript">
+			//<![CDATA[
+				jQuery.ajax({
+					url:"../../../../../video_links/json.php",
+					dataType:"json",
+					success:getLinks,
+					error: function(){
+						alert("Error loading images");
+						tinyMCEPopup.close();
+					}
+				});
+				
+				function createInsertHandler(link){
+					return function(){
+						for(var i=1; i < 9; i++) {
+							var img = document.getElementById("image_"+i);
+							if(img.checked) {
+								selectedImage = img.value;
+							}
+						}
+						var linkText = link.url;
+						
+						var baseUrl = tinyMCEPopup.editor.settings.document_base_url;
+						var img_src = "presentation/" + selectedImage;
+						var html = "<a href=\"" + linkText + "\" class=\"video-link\"><img src=\"" + img_src  + "\" alt=\"" + link.title + "\" /></a>";
+						
+						tinyMCE.execCommand('mceInsertContent', false, html);
+						tinyMCEPopup.close();
+					}
+				}
+				
+				function getLinks(links){
+					
+					var container = document.getElementById("image-container");
+					
+					var ul = document.createElement("ul");
+					for(var i = 0; i < links.length; i++){
+
+						var li = document.createElement("li");
+						
+						var a = document.createElement("a");
+						a.appendChild(document.createTextNode(links[i].title));
+						a.href = "#";
+						a.onclick = createInsertHandler(links[i]);
+						
+						li.appendChild(a);
+						ul.appendChild(li);
+					}
+					
+					container.appendChild(ul);
+				}
+				
+			//]]>
+			</script>
+		
+		
+		</div>
+		
+		<div class="mceActionPanel">
+			<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+		</div>
+	</form>
+</body>
+</html>

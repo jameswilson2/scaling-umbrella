@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap');
+body {font-family: 'Nunito', sans-serif; background: #F3F6F9}
+html {
+  scroll-behavior: smooth;
+}
+
+.services img, .prices div, .white, .right img, .left img {border-radius: 0.5rem}
+
+.prices div div {box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+}
+
+.terms ol { counter-reset: item }
+.terms li{ display: block }
+.terms li:before { content: counters(item, ".") " "; counter-increment: item }
+
+
+img.cxlogo {max-width: 200px; margin-bottom: 15px}
+.topimage {width: 49px!important; height: auto; position: fixed; bottom: 30px; right: 30px}
+red {color: #E11F26}
+.white {background: white}
+video {
+  object-fit: cover;
+     object-position:  left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+}
+.video-wrapper, .image-wrapper {
+ 
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.image-wrapper, .bg-res, .bg-res-2 { background-repeat: no-repeat;
+ background-size: cover;
+  background-position: bottom center; }
+.residential {background-image: url("../img/residential.jpg");}
+
+.holidaypark {background-image: url("../img/holiday-park.jpg"); min-height: 300px}
+.holidaypark-top {background-image: url("../img/holiday-park-2.jpg"); min-height: 300px}
+.bg-res1 {background: 
+#0958A2; }
+
+.bg-res2 {background: 
+
+#073A6F}
+
+.bg-res22 {background: 
+
+#062F57}
+
+.bg-res3 {background: 
+#062440}
+.bg-res-2 {background-image: url("../img/residential-price-2.jpg");}
+.background {background-image: url("../img/background.jpg"); background-repeat: no-repeat;
+ background-size: cover;
+  background-position: top center; }
+.background h2 {font-size: 1.4rem}
+
+  .icons, .navbar, .navbar-toggler, .intro {position: relative; z-index: 9; }
+
+.icons img {max-width: 27px; width: 100%; height: auto; margin-right: 4px; margin-left: 30px}
+.icons a {color: white; text-decoration: none; text-transform: uppercase; font-weight: 500; font-size: 0.85rem}
+.icons a:hover {opacity: 0.8}
+
+.logo {max-width: 250px; width: 100%}
+
+.intro {padding-top: 20px; padding-bottom: 30px}
+.intro h3, .prices p, .prices h3, .prices h2, .prices a, .residential h2, .residential h4 {color: white!important;}
+.prices h3 {font-size: 1.35rem; border-bottom: solid white 1px;  padding-bottom: 1.5rem; line-height: 1.4rem}
+.prices h2 {font-size: 1.4rem; margin-bottom: 0px }
+.prices p {font-size: 0.95rem; line-height: 1.3rem}
+
+
+.nav-link {font-weight: 700; color: #061844!important; font-size: 0.9rem; }
+
+
+
+h1 {color: white!important; font-weight: 400!important; font-size: 1.8rem;}
+h2 {font-size: 1.25rem; font-weight: 400; line-height: 1.45rem}
+h3 {font-size: 1.25rem;  font-weight: 500; line-height: 1.45rem; }
+h4 {font-size: 1.05rem;  font-weight: 500; line-height: 1.3rem}
+h5 {font-size: 1.2rem;  font-weight: 500; line-height: 1rem}
+p, label, .other {font-size: 0.9rem; line-height: 1.2rem; color: #061844}
+.form-label  {font-size: 0.9rem; line-height: 1.2rem}
+.callaction {background:  linear-gradient(90deg , rgba(8,70,136,1) 0%, rgba(5,35,63,1) 100%); color: white; font-size: 1rem; display: inline-block; line-height: 2.7rem}
+.callaction a {color: white!important; text-decoration: none!important}
+
+
+
+img.arrow {max-width: 19px; margin-left: 7px; }
+h3 a {color: #074586; text-decoration: none}
+h3 a:hover {color: #4D8EC4}
+h3 a::after { position: absolute; /* Prevent underline of arrow */
+    padding-left:3px; padding-top: 1.8px; /* Add a little space between text and arrow */
+    content: "\2192"; font-size: 1.5rem/* Unicode hex for &raquo; */}
+.ratestable {max-width: 100%; width: 100%; font-size: 1rem; line-height: 1.2rem}
+.ratestable tr {border-bottom: rgba(6, 24, 68, 0.3) solid 1px; line-height: 30px }
+.ratestable th.text-end {line-height: 1.3rem; width: 20%}
+.left {margin-right: -5%;}
+.right {margin-left: -5% }
+.white {position: relative}
+.white h2 {font-size: 1.05rem; line-height: 1.2rem; color: #E11F26; font-weight: 600}
+.white li, .white p {font-size: 0.85rem}
+.white ul { padding-left: 3.5%}
+.white p {margin-bottom: 4px}
+
+.holidayhome li {font-size: 1.05rem; list-style-type: none; margin-bottom: 5px}
+img.arrow {max-width: 20px; margin-right: 5px}
+
+.footer {background: #05233F; color: white}
+.footer ul {margin-bottom: 0}
+.footer ul li {font-size: 0.9rem; list-style: none}
+.footer table {width: 100%; height: 100%}
+.footer img {height: 40px; padding-right: 5px }
+.contact {border-bottom: 1px solid white; font-size: 1rem; font-weight: 400}
+.contact a {padding: 5px}
+.credits {border-top: 1px solid white;}
+.credits p {color: white}
+.credits p {font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0}
+.footer a {color: white; text-decoration: none;}
+.footer a:hover {text-decoration: underline}
+.copy h1 {font-size: 1.2rem; color: #061844!important; font-weight: 700!important}
+.copy h4 {font-weight: 700; margin-top: 35px; color: #4D8EC4}
+.copy ul, .copy ol  {font-size: 0.9rem}
+
+.copy a {color: #4D8EC4 }
+.copy a:hover {text-decoration: none}
+.header .icons {background: #061844}
+
+ol.c {
+  list-style-type: upper-roman;
+}
+
+ol.d {
+  list-style-type: lower-alpha;
+}
+
+img.w3w {width: 20px; margin-right: 5px }
+
+
+.button {
+  display: inline-block;
+  padding: 0.45rem 1rem 0.35rem 1rem;
+  border-radius: 0.3rem;
+  color: #fff;
+
+    letter-spacing: 0.1px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+    border: solid 1px white;
+    text-decoration: none; margin-top: 15px;
+}
+
+.button.two {background: black}
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 0.3rem;
+   
+  z-index: -2;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(8,70,136,1) 0%, rgba(5,35,63,1) 100%);
+  transition: all 0.3s;
+  border-radius: 0.10rem;
+  z-index: -1;
+    
+    
+}
+.button:hover {
+  color: #fff;
+}
+.button:hover:before {
+  width: 100%;
+}
+
+
+/* Remove border from toggler */
+.navbar-toggler {
+    border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color: #05233F;
+    display: block;
+    transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar{
+    margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: #05233F;
+}
+
+
+
+
+
+@media (min-width: 768px) {
+
+ 
+    .icons img {max-width: 28px;}
+   .navbar 
+ul {
+    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 1.2rem;
+}
+
+/* Underline styles */
+.navbar a {
+
+  position: relative;
+  padding: 0.1m 0;
+    text-decoration: none
+}
+
+    a.navbar-brand::after {  background-color: transparent!important;}
+    
+/* Fade in */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.15em;
+  border-radius: 50px;
+  background-color: #061844;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.navbar  a:hover::after,
+.navbar a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* Slide in */
+.navbar li a {
+  overflow: hidden;
+}
+
+.navbar li a::after {
+  opacity 1;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.navbar li a:hover::after,
+.navbar li a:focus::after{
+    transform: translate3d(0, 0, 0);}
+
+
+
+
+}
+
+@media (min-width: 576px) { 
+
+ 
+    .red { position: relative;}
+.red div {position: absolute;
+            bottom: 0;
+            right: 0;}
+    
+    
+
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+    
+    
+    
+    .icons img {max-width: 28px;}
+     .left {margin-right: -10%}
+    .right {margin-left: -10%}
+ 
+    .logo {max-width: 220px}
+    .navbar ul {margin-top: 10px;}
+    .navbar li a {padding-top: 2px; padding-bottom: 2px;}
+    .navbar li a:hover {background: #05233F; color: white!important}
+}
+
+@media (max-width: 576px) {
+    h1 {font-weight: 300!important; font-size: 1.6rem; }
+    .left {margin-right: 0}
+    .right {margin-left: 0}
+    .icons img {max-width: 23px;}

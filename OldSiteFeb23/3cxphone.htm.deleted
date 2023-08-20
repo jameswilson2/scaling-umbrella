@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>3CX Phone System</title>
+	<meta name="description" content="Page Description" />
+	<meta name="keywords" content="Page Keywords" />
+	<meta name="author" content="SCK Web Works - www.sck-webworks.co.uk" />
+	<meta name="robots" content="all" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="http://www.kencomp.net/" />
+	
+	<link href="presentation/framework.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="presentation/screen.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	
+	<link href="presentation/print.css" rel="stylesheet" type="text/css" media="print" />
+	<!--[if IE 6]><link href="presentation/ie6.css" rel="stylesheet" type="text/css" media="all"><![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+	<script src="behaviour/jquery-plugins.js" type="text/javascript"></script>
+	
+	<link href="fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+	<script src="fancybox/jquery.fancybox-1.3.4.js" type="text/javascript"></script>
+	<script src="behaviour/package.js" type="text/javascript"></script>
+	<script src="behaviour/jquery.imageGallery.js" type="text/javascript"></script>
+	<script src="behaviour/jquery.infiniteScroll.js" type="text/javascript"></script>
+	<script src="behaviour/presentation.js" type="text/javascript"></script>
+	
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-34638189-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+</head>
+<body>
+	<div class="header">
+		<div class="container cs">
+			<div class="left_section">
+				<a href="." class="logo"><img src="presentation/logo.png" alt="Kencomp" /></a>
+			</div>
+			<div class="right_section">
+				<div class="contact_item">
+					<strong>Call us today:</strong> 01539 898 145
+				</div>
+				<div class="contact_item">
+					<strong>Support:</strong> support@kencomp.net
+				</div>
+				<div class="contact_item">
+					<strong>Sales:</strong> sales@kencomp.net
+				</div>
+				<div class="clear"></div>
+			
+			</div>
+		</div>
+	</div>
+	<nav>
+		<div class="nav">
+			<div class="back">
+				<div class="container cs">
+					<div id="nav">
+						<ul class="cs">
+<li><a href="/">Home Page</a></li>
+<li><a href="javascript:;">Broadband</a>
+<ul>
+<li><a href="broadband/home/">Broadband Home</a></li>
+<li><a href="broadband/business/">Business Broadband</a></li>
+<li><a href="broadband/corporate/">Corporate Broadband</a></li>
+<li><a href="broadband/community/">Community Broadband</a></li>
+<li><a href="broadband/holiday-parks">Caravan Parks</a></li>
+</ul>
+</li>
+<li><a href="javascript:;">Telephony</a>
+<ul>
+<li><a href="telephony/home/">Telephony Home</a></li>
+<li><a href="telephony/business/">Telephony Business</a></li>
+<li><a href="telephony/hotels/">Telephony Hotels</a></li>
+<li><a href="telephony/holiday-parks/">Telephony Holiday Parks</a></li>
+</ul>
+</li>
+<li><a href="javascript:;">Wi-Fi</a>
+<ul>
+<li><a href="wi-fi/hotels/">Wi-Fi Hotels</a></li>
+<li><a href="wi-fi/holiday-parks/">Wi-Fi Caravan Parks</a></li>
+<li><a href="wi-fi/holiday-lets/">Wi-Fi for Holiday Lets</a></li>
+</ul>
+</li>
+<li><a href="coverage/">Coverage</a>
+<ul>
+<li><a href="coverage/our-coverage/">Our Coverage</a></li>
+<li><a href="coverage/out-of-area/">Out of Area?</a></li>
+</ul>
+</li>
+<li><a href="javascript:;">Hosting Services</a>
+<ul>
+<li><a href="hosting-services/domain/">Domain Hosting</a></li>
+<li><a href="hosting-services/email/">Email Hosting</a></li>
+<li><a href="hosting-services/server/">Server Hosting</a></li>
+<li><a href="hosting-services/website/">Website Hosting</a></li>
+</ul>
+</li>
+<li><a href="account/">My Account</a></li>
+<li><a href="enquiries/">Contact Us</a></li>
+</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container">
+		<div class="content">
+			<div class="major_left">
+				<!-- CONTENT START -->
+<h1 align="left">Evolve Your Communications With 3CX Phone System for Windows</h1>
+<p align="left">3CX Phone System for Windows is a software based PBX for Windows that works with SIP standard based IP Phones, SIP trunks and VoIP Gateways to provide a full PBX solution &ndash; without the inflated cost and management headaches of an &lsquo;old style&rsquo; PBX. Used by more than&nbsp;<a href="http://www.3cx.com/company/about/">30,000 companies</a>&nbsp;globally, 3CX&nbsp;has been recognized for its innovation and cutting-edge technology.</p>
+<h2 align="left">Easy Installation and Management</h2>
+<p align="left">Because 3CX runs on Windows, it is&nbsp;<a href="http://www.3cx.com/phone-system/easy-pabx-management/">easily installed and managed</a>&nbsp;by Windows IT administrators without the need for special telecom or Linux skills. It&rsquo;s preconfigured to work with popular IP Phones, VoIP Gateways and SIP trunks saving you the hassle of having to configure and manage these devices.</p>
+<ul>
+<li>No need for extensive telecom knowledge or training</li>
+<li>Open Standards &ndash; Vendor independent</li>
+<li>Central Control from the 3CX Management Console</li>
+<li>Choose from popular IP Phones, VoIP Gateways, SIP Trunks</li>
+</ul>
+<h2>Take your Extension Anywhere</h2>
+<p>3CX includes&nbsp;<a href="http://www.3cx.com/phone-system/android-ios-voip/">clients for smartphones</a>&nbsp;and&nbsp;<a href="http://www.3cx.com/phone-system/windows-mac-softphone/">Mac or Windows</a>&nbsp;laptops that allow users to use their office extension from anywhere, seamlessly integrated as if they were in the office. Not only are all calls to the office free of charge, but employees can leverage one single number and make a professional impression.</p>
+<ul>
+<li>Take your extension everywhere you go</li>
+<li>All calls are free of charge &ndash; slash your mobile phone bills</li>
+<li>Increase productivity &ndash; work from anywhere</li>
+<li>One number &ndash; Don&rsquo;t give out your personal mobile number</li>
+</ul>
+<h2 align="left">Halve your Telephone Bill and Increase Sales</h2>
+<p align="left">With 3CX, companies can reduce their&nbsp;<a href="http://www.3cx.com/case-studies/">telephone costs by up to 80%</a>, by leveraging SIP trunks, WebRTC, free calling to remote extensions and offices and reducing the number of fixed telephony lines. With the CRM integration, agents get a customer name rather than a number.</p>
+<ul>
+<li>Save on call costs by lowering mobile &amp; customer service number bills</li>
+<li>Easily add and remove extensions &ndash; no per user license</li>
+<li>Know who&rsquo;s calling with&nbsp;<a href="http://www.3cx.com/crm-integration/">CRM integration</a>&nbsp;-increase customer satisfaction</li>
+<li>Leverage existing hardware, wiring and low cost open standard hardware</li>
+</ul>
+<h2 align="left">10 Advantages of 3CX Phone System</h2>
+<p align="left">1. Software based: Easy to install &amp; manage</p>
+<p>2. Inexpensive to buy and expand</p>
+<p>3. Work from anywhere with iOS &amp; Android clients</p>
+<p>4. Leverage existing IT infrastructure &amp; Server hardware</p>
+<p>5. Save on your phone bill with SIP Trunks &amp; Mobile / Remote clients</p>
+<p>6. Integrated video conferencing using WebRTC</p>
+<p>7. Better customer service with advanced call queues</p>
+<p>8. Integrate with CRM &amp; Accounting software</p>
+<p>9. Standards based &ndash; use popular IP Phones, SIP Trunks</p>
+<p>10. Click 2 Call from your website</p>
+<p><br /> You can view the <a href="http://www.3cx.com/phone-system/3CXDatasheet.pdf">3CX Datasheet</a> and the <a href="http://www.3cx.com/phone-system/3CXPhoneSystem_brochure.pdf">3CX Phone System brochure</a> (PDF) or <a href="http://www.3cx.com/phone-system/download-phone-system/">download 3CX Phone System for Windows here</a>. If you require any assistance with setting up 3CX Phone System, we&rsquo;re happy to help.</p>
+<p>Take a look at the <a href="http://www.3cx.com/datasheet/3CXWebMeeting.pdf">3CX WebMeeting datasheet</a> and find out how your business can cut costs and increase productivity by leveraging WebRTC.</p>
+					<!-- CONTENT END -->
+			</div>
+			<div class="minor_right">
+				<div class="searchpanel">
+				<div class="corner">&nbsp;</div>
+				<div class="side">&nbsp;</div>
+				<div class="h1"><strong>Can I get <em>Superfast</em> Broadband?</strong></div>
+				<p>Enter your postcode below to see if you can receive superfast broadband from us.</p>
+				<form action="coverage/" id="checkarea" method="get"><input id="postcode" name="postcode" class="postcodefield" /><input type="submit" value="&gt; Check area" class="btn" /></form>
+			</div>
+			</div>
+			<div class="clear"></div>
+			
+		</div>
+	</div>
+	<div class="undercontent">
+		<div class="container">
+			<div class="qtrs cs">
+<div class="qtr">
+<div class="h2" style="text-align: center;">Superfast <strong>Broadband</strong></div>
+<div class="photo"><img src="images/laptop-user.jpg" alt="" /> <span class="corner"> From<br /><strong>&pound;20.99</strong> </span></div>
+<p style="text-align: center;">Get superfast broadband without a phone line</p>
+<p style="text-align: center;"><a class="btn" href="broadband/home">&gt; Show me more</a></p>
+</div>
+<div class="qtr">
+<div class="h2" style="text-align: center;">Phone <strong>Services</strong></div>
+<div class="photo"><img src="images/workstation.jpg" alt="" /> <span class="corner"> From<br /><strong>&pound;10.00</strong> </span></div>
+<p style="text-align: center;">A great phone service without the phone line</p>
+<p style="text-align: center;"><a class="btn" href="telephony/home">&gt; Show me more</a></p>
+</div>
+<div class="qtr">
+<div class="h2" style="text-align: center;">Corporate <strong>Networks</strong></div>
+<div class="photo"><img src="images/workingteam.jpg" alt="" /> <span class="corner"> <br /><strong>Enquire</strong> </span></div>
+<p style="text-align: center;">Totally secure, affordable <br />corporate networks</p>
+<p style="text-align: center;"><a class="btn" href="broadband/corporate">&gt; Show me more</a></p>
+</div>
+<div class="qtr">
+<div class="h2" style="text-align: center;">Wifi&nbsp;<strong>Solutions</strong></div>
+<div class="photo"><img src="images/hotel-wifi.jpg" alt="" width="208" height="135" /><span class="corner"><br /><strong>Enquire</strong></span></div>
+<p style="text-align: center;">Wifi solutions for Caravan Parks and Hotels</p>
+<p style="text-align: center;"><a class="btn" href="wi-fi/homepage/index.htm">&gt; Show me more</a></p>
+</div>
+</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container cs">
+			<div class="left_section">
+				<div class="contact_item">
+					<strong>Sales:</strong> sales@kencomp.net
+				</div>
+				<div class="contact_item">
+					<strong>Support:</strong> support@kencomp.net
+				</div>
+				<div class="contact_item">
+					<strong>Call us today:</strong> 01539 898 145
+				</div>
+				<div class="clear"></div>
+				<p>Kencomp Internet Limited, Kerian House, 64 Stramongate, Kendal, Cumbria, LA9 4BD</p>
+				<p><a href="enquiries/" class="btn">&gt; Get Directions</a></p>
+			</div>
+			<div class="right_section">
+				<p style="text-align: center;"><a href="faq">FAQ</a> | <a href="privacypolicy.htm">Privacy</a>&nbsp;| <a href="terms.htm">Terms &amp; Conditions</a></p>
+<p style="text-align: center;"><a href="acceptableuse.htm">Acceptable Use</a>&nbsp;| <a href="complaints.htm">Complaints</a><a href="terms.htm"><br /></a></p>
+				<div class="footerline"&nbsp;></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<document>
+	
+	<!--<item name="" width="" height="" />-->
+
+	<item name="Content Photo Landscape - S" width="150" height="113" />
+	<item name="Content Photo Landscape - M" width="170" height="128" />
+	<item name="Content Photo Landscape - L" width="200" height="151" />
+	<item name="Content Photo Landscape - XL" width="230" height="173" />
+	<item name="Content Photo Landscape - XXL" width="400" height="301" />
+	
+	<item name="Content Photo Portrait - S" width="113" height="150" />
+	<item name="Content Photo Portrait - M" width="128" height="170" />
+	<item name="Content Photo Portrait - L" width="150" height="201" />
+	<item name="Content Photo Portrait - XL" width="173" height="230" />
+	<item name="Content Photo Portrait - XXL" width="301" height="400" />
+	
+	<!-- Three Custom Options -->
+	<item name="Square" width="280" height="280" />
+	<!--<item name="Header Photo" width="778" height="300" />-->
+	
+</document>

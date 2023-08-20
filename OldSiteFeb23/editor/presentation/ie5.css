@@ -1,0 +1,19 @@
+/* IE5 Center of Life Hack! */
+body { text-align:center; }
+#container { text-align:left; }
+
+/* Extra Known Bugs */
+.clear { clear:both; height:0; overflow:hidden; font-size:0.1px; line-height:0; }
+#jquery-accordion div { display:block; }
+table td { font-size:12px; }
+table th { font-size:12px; }
+
+.article-left { width:45%; float:left; }
+.article-right { width:45%; float:right; }
+.article-rightalt { width:45%; float:right; text-align:right; }
+
+/* Quick Form */
+#quickForm div.element { margin:0 0 0 5px; }
+#quickForm input { width:97.5%; }
+
+#article { width:532px; }

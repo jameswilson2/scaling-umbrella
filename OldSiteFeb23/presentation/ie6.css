@@ -1,0 +1,8 @@
+hr { margin:0 0 16px 0; }
+
+.closebutton {
+  /* NOTE! This URL is relative to the HTML page, not the CSS */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='behaviour/highslide/close.png', sizingMethod='scale');
+	background: none;
+	cursor: hand;
+}

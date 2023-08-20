@@ -1,0 +1,31 @@
+RewriteEngine On
+
+
+# Re-write everything for the old site
+RewriteCond %{REQUEST_URI} !^/OldSiteFeb23
+RewriteRule ^(.*)$ /OldSiteFeb23/$1 [NC,L]
+
+RewriteCond %{THE_REQUEST} ^GET\ .*/index\.(php|html|htm)\ HTTP
+RewriteRule ^(.*)index\.(php|html|htm)$ http://www.kencomp.net/OldSiteFeb23/$1 [R=301,L]
+
+
+# Don't rewrite secure images (secure error fix)
+RewriteRule \.(css|jpe?g|gif|png)$ - [L]
+
+
+# Homepage folder setup
+RewriteRule ^$ homepage/index.htm [L,QSA]
+
+RewriteRule ^broadband/?$ OldSiteFeb23/broadband/homepage/index.htm [L,QSA]
+RewriteRule ^telephony/?$ /OldSiteFeb23/telephony/homepage/index.htm [L,QSA]
+RewriteRule ^wi-fi/?$ OldSiteFeb23/wi-fi/homepage/index.htm [L,QSA]
+
+
+ErrorDocument 404 /404.php
+ErrorDocument 505 /404.php
+
+RewriteRule ^broadband/communities/? http://www.kencomp.net/OldSiteFeb23/gallery/ [L,QSA]
+
+#Stops browsing of directories
+Options +FollowSymLinks
+Options -Indexes

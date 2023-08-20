@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Insert Video Link</title>
+	
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="../../utils/mctabs.js"></script>
+	<script type="text/javascript" src="../../utils/form_utils.js"></script>
+	<script type="text/javascript" src="../../utils/validate.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script>
+	<style type="text/css">
+		#image-container img{cursor:pointer; margin:0.5em; border:1px solid #919B9C;}
+	</style>
+</head>
+<body id="table" style="display: none" role="application" aria-labelledby="app_title">
+	<span style="display:none;" id="app_title">{#table_dlg.title}</span>
+	<form onsubmit="return false;" action="#">
+
+		<div class="panel_wrapper">
+			<p>Click on an image to insert it into the web page</p>
+			<div id="image-container">&nbsp;</div>
+			
+			<script type="text/javascript">
+			//<![CDATA[
+				jQuery.ajax({
+					url:"../../../../../gallery/images.json.php",
+					dataType:"json",
+					success:getImages,
+					error: function(){
+						alert("Error loading images");
+						tinyMCEPopup.close();
+					}
+				});
+				
+				function createInsertThumbImageHtmlHandler(imageFilename){
+					return function(){
+					
+						var baseUrl = tinyMCEPopup.editor.settings.document_base_url;
+						var fullUrl = baseUrl + "gallery/images/" + imageFilename;
+						var thumbUrl = baseUrl + "gallery/images/thumbs/" + imageFilename;
+						
+						var html = "<a href=\"" + fullUrl + "\" onclick=\"return hs.expand(this);\"><img src=\"" + thumbUrl + "\" alt=\"\" /></a>";
+						
+						tinyMCE.execCommand('mceInsertContent', false, html);
+						tinyMCEPopup.close();
+					}
+				}
+				
+				function getImages(images){
+					var container = document.getElementById("image-container");
+					for(var i = 0; i < images.length; i++){
+						var item = document.createElement("img");
+						item.src = "../../../../../../gallery/images/thumbs/" + images[i];
+						item.onclick = createInsertThumbImageHtmlHandler(images[i]);
+						container.appendChild(item);
+					}
+				}
+				
+			//]]>
+			</script>
+		</div>
+		
+		<div class="mceActionPanel">
+			<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+		</div>
+	</form>
+</body>
+</html>

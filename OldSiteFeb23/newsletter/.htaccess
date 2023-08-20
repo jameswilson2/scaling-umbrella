@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteRule ^subscribe/?$ index.php?action=subscribe [L,QSA]
+RewriteRule ^unsubscribe/?$ index.php?action=unsubscribe [L,QSA]
+RewriteRule ^$ index.php?action=subscribe [L,QSA]
+
+
+
+
+
+

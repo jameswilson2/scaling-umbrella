@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^item/([0-9]+)/(([^/\.]+)/?)*$ item.php?id=$1 [L,QSA]
+RewriteRule ^item/$ item.php [L,QSA]
