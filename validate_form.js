@@ -39,18 +39,6 @@ function validateForm() {
         errorMessage += "Message is required.<br>";
     }
 
-    if (isNaN(captcha) || parseInt(captcha) !== <?php echo $captchaAnswer; ?>) {
-        highlightField("captcha");
-        errorMessage += "Captcha verification failed.<br>";
-    }
-
-    if (errorMessage !== "") {
-        displayError(errorMessage);
-        scrollToTop();
-        return false;
-    }
-
-    return true;
 }
 
 function validateEmail(email) {
