@@ -13,6 +13,7 @@
 <link href="css/navigation.css" rel="stylesheet" >
       <link href="css/style.css" rel="stylesheet" >
      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <script src="validate_form.js"></script>
 
  
   </head>
@@ -121,44 +122,30 @@ If emailing or using the contact form, we will respond within 24 hours.</p></div
 
                 
   
-  <form id="contactForm" method="post" action="enquiries/sendmail.php" class=mb-5>
+    <form id="contactForm" action="enquiries/sendmail.php" method="post" onsubmit="return validateForm()" class=mb-5>
 
-    <!-- Name input -->
-  
-      <label class="form-label" for="formName"></label>
-      <input class="form-control" name="formName" id="name" type="text" placeholder="Name" />
-   
+    <label for="name">Name:</label>
+    <input type="text" name="name" required><br><br>
 
-    
-    
-      <label class="form-label" for="formEmail"></label>
-      <input class="form-control" name="formEmail" id="emailAddress" type="email" placeholder="Email Address" />
-   
-      
-     
-      <label class="form-label" for="formTele"></label>
-      <input class="form-control" name="formTele" id="phoneNumber" type="number" placeholder="Phone Number" />
-      
-      <label class="form-label" for="formService"></label>
-      <input class="form-control" name="formService" id="phoneNumber" type="text" placeholder="Type of Service Required" />
-      
-    <label class="form-label" for="formAddress"></label>
-      <input class="form-control" name="formAddress" id="phoneNumber" type="text" placeholder="Address" />
-      
- 
-   
-      <label class="form-label" for="message"></label>
-      <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;"></textarea>
-      
-       <div class="mt-3">
-   <label for="human_test">Spam filter :</label>
-		<span class="other">Solve this problem: nine + 7 =  <input type="text" name="human_test" id="human_test" size="3" />
-		</span>
-		<input type="hidden" name="human_test_key" value="9502037775a426245ef1a07133ce5b9b" />
-      </div>
-        <button class="btn btn-danger mt-3" type="submit">Submit</button>
-   
+    <label for="email">Email Address:</label>
+    <input type="email" name="email" required><br><br>
 
+    <label for="phone">Phone Number:</label>
+    <input type="tel" name="phone" required><br><br>
+
+    <label for="service">Type of Service Required:</label>
+    <input type="text" name="service" required><br><br>
+
+    <label for="address">Address:</label>
+    <input type="text" name="address" required><br><br>
+
+    <label for="message">Message:</label>
+    <textarea name="message" rows="4" required></textarea><br><br>
+
+    <label for="captcha">Captcha: What is <?php echo $captchaQuestion; ?>?</label>
+    <input type="number" name="captcha" required><br><br>
+
+    <button type="submit">Submit</button>
 
                   </form>
               
