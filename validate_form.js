@@ -7,23 +7,46 @@ function validateForm() {
     var message = document.forms["contactForm"]["message"].value;
     var captcha = document.forms["contactForm"]["captcha"].value;
 
-    if (name === "" || email === "" || phone === "" || service === "" || address === "" || message === "" || captcha === "") {
-        alert("All fields are required.");
-        return false;
+    var errorMessage = "";
+
+    if (name === "") {
+        highlightField("name");
+        errorMessage += "Name is required.<br>";
     }
 
     if (!validateEmail(email)) {
-        alert("Invalid email format.");
-        return false;
+        highlightField("email");
+        errorMessage += "Invalid email format.<br>";
     }
 
     if (!validatePhoneNumber(phone)) {
-        alert("Invalid phone number.");
-        return false;
+        highlightField("phone");
+        errorMessage += "Invalid phone number.<br>";
+    }
+
+    if (service === "") {
+        highlightField("service");
+        errorMessage += "Service is required.<br>";
+    }
+
+    if (address === "") {
+        highlightField("address");
+        errorMessage += "Address is required.<br>";
+    }
+
+    if (message === "") {
+        highlightField("message");
+        errorMessage += "Message is required.<br>";
     }
 
     if (isNaN(captcha) || parseInt(captcha) !== <?php echo $captchaAnswer; ?>) {
-        alert("Captcha verification failed.");
+        highlightField("captcha");
+        errorMessage += "Captcha verification failed.<br>";
+    }
+
+    if (errorMessage !== "") {
+        displayError(errorMessage);
+        scrollToTop();
         return false;
     }
 
@@ -36,6 +59,20 @@ function validateEmail(email) {
 }
 
 function validatePhoneNumber(phone) {
-    var re = /^\d{10}$/;
+    var re = /^\d{11}$/;
     return re.test(phone);
+}
+
+function highlightField(fieldName) {
+    document.forms["contactForm"][fieldName].style.borderColor = "red";
+}
+
+function displayError(message) {
+    var errorContainer = document.getElementById("errorContainer");
+    errorContainer.innerHTML = message;
+    errorContainer.style.display = "block";
+}
+
+function scrollToTop() {
+    window.scrollTo(0, 0);
 }

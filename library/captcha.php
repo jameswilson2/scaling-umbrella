@@ -13,7 +13,7 @@ class Captcha {
         $answer = ($operator === 0) ? $value1 + $value2 : $value1 - $value2;
 
         // Generate question string
-        $question = $value1 . ($operator === 0 ? " + " : " - ") . ($value2 < 10 ? $value2 : self::numberToWords($value2));
+        $question = $value1 . ($operator === 0 ? " + " : " - ") . ($value2 > 10 ? $value2 : self::numberToWords($value2));
         
         return [
             "question" => $question,

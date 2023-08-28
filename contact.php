@@ -121,7 +121,7 @@ by phone on 01539 898145<br>
 If emailing or using the contact form, we will respond within 24 hours.</p></div>
               <div class="col-11 col-sm-6 col-md-5 ps-sm-4 mt-5 mt-sm-0">
 
-                
+    <div id="errorContainer" style="display: none; color: red;"></div>            
   
     <form id="contactForm" action="enquiries/sendmail.php" method="post" onsubmit="return validateForm()" class=mb-5>
 

@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$mail->setFrom($emailFrom, $emailFromName);
 	$mail->addAddress($emailTo, $emailToName);
 	$mail->Subject = $emailSubject;
-	$mail->msgHTML("Name: $name\nEmail: $email\nPhone: $phone\nService: $service\nAddress: $address\nMessage: $message";); //$mail->msgHTML(file_get_contents('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
+	$mail->msgHTML("Name: $name\nEmail: $email\nPhone: $phone\nService: $service\nAddress: $address\nMessage: $message"); //$mail->msgHTML(file_get_contents('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
 	$mail->AltBody = 'HTML messaging not supported';
 
 
