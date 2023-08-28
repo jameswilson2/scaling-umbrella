@@ -1,4 +1,12 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/PHPMailer.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/SMTP.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/Exception.php';
+
+
 // Include the Captcha class
 require_once $_SERVER['DOCUMENT_ROOT'] . '/library/captcha.php';
 
@@ -35,22 +43,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = htmlspecialchars($address);
     $message = htmlspecialchars($message);
 
+	$emailHost = "mail.kencomp.net";
+	$emailFrom = "enquires@kencomp.net";
+	$emailFromName = "Web Enquiry";
+	$emailTo = "james@me.aa4.co.uk";
+	$emailToName = "Kencomp Internet LTD";
+	$emailSubject = "New Contact Form Submission";;
+
+	$mail = new PHPMailer;
+	$mail->isSMTP(); 
+	$mail->SMTPDebug = 2; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
+	$mail->Host = $emailHost; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
+	$mail->Port = 25; // TLS only
+	$mail->SMTPSecure = false; // ssl is depracated
+	$mail->SMTPAuth = false;
+	$mail->setFrom($emailFrom, $emailFromName);
+	$mail->addAddress($emailTo, $emailToName);
+	$mail->Subject = $emailSubject;
+	$mail->msgHTML("Name: $name\nEmail: $email\nPhone: $phone\nService: $service\nAddress: $address\nMessage: $message";); //$mail->msgHTML(file_get_contents('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
+	$mail->AltBody = 'HTML messaging not supported';
+
+
     // Send email
-    $to = "james@me.aa4.co.uk"; // Replace with your email address
-    $subject = "New Contact Form Submission";
-    $email_message = "Name: $name\nEmail: $email\nPhone: $phone\nService: $service\nAddress: $address\nMessage: $message";
-
-    // Additional headers
-    $headers = "From: $email" . "\r\n";
-
-    // Send email
-    if (mail($to, $subject, $email_message, $headers)) {
-        echo "Thank you for contacting us. Your message has been sent.";
-    } else {
-        echo "Sorry, there was an error sending your message.";
-    }
-
-    // Include the new captcha question in the HTML form
-    include("../contact.php");
+	if(!$mail->send()){
+		echo "Mailer Error: " . $mail->ErrorInfo;
+	}else{
+		echo "Message sent!";
+	}
 }
 ?>

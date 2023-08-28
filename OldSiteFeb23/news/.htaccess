@@ -1,5 +1,0 @@
-RewriteEngine On
-
-RewriteRule ^(([0-9]+)/)?$ index.php?page=$2 [L,QSA]
-RewriteRule ^article/([0-9]+)/(([^/\.]+)/)*$ item.php?nid=$1 [L,QSA]
-RewriteRule ^article/ item.php [L,QSA]

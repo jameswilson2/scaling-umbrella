@@ -1,8 +1,0 @@
-<?php
-
-define('UPLOAD_FOLDER', 'downloads/');
-
-define('UPLOAD_PATH', EDITABLE_ROOT.UPLOAD_FOLDER);
-define('UPLOAD_WEB_PATH', WEB_ROOT.UPLOAD_FOLDER);
-
-?>

@@ -1,1 +1,0 @@
-<p><img title="lakes.jpg" src="images/lakes.jpg" alt="lakes.jpg" width="505" height="293" /></p>
