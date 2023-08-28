@@ -1,11 +1,8 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Generate a new captcha question and answer
-    $captchaValue1 = rand(1, 10);
-    $captchaValue2 = rand(1, 10);
-    $captchaAnswer = $captchaValue1 + $captchaValue2;
-    $captchaQuestion = "$captchaValue1 + $captchaValue2";
+// Include the Captcha class
+require_once("captcha.php");
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
@@ -13,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = $_POST["address"];
     $message = $_POST["message"];
     $userCaptcha = $_POST["captcha"];
+    $captchaAnswer = $_POST["captchaAnswer"];
 
     // Captcha validation
     if ($userCaptcha != $captchaAnswer) {
