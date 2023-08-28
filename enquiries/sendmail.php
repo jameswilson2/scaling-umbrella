@@ -1,6 +1,6 @@
 <?php
 // Include the Captcha class
-require_once("library/captcha.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . '/library/captcha.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];

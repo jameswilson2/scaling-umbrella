@@ -1,4 +1,4 @@
-require_once("library/captcha.php");
+<?php require_once("library/captcha.php"); ?>
 <!doctype html>
 <html lang="en">
   <head>
