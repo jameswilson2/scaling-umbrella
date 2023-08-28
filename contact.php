@@ -95,35 +95,35 @@
 
                     <form id="contactForm" action="enquiries/sendmail.php" method="post" onsubmit="return validateForm()" class="mb-5">
                         <label class="form-label" for="name">Name:</label>
-                        <input class="form-control" type="text" name="name" required /><br />
+                        <input class="form-control" type="text" name="name" required />
                         <br />
 
                         <label class="form-label" for="email">Email Address:</label>
-                        <input class="form-control" type="email" name="email" required /><br />
+                        <input class="form-control" type="email" name="email" required />
                         <br />
 
                         <label class="form-label" for="phone">Phone Number:</label>
-                        <input class="form-control" type="tel" name="phone" required /><br />
+                        <input class="form-control" type="tel" name="phone" required />
                         <br />
 
                         <label class="form-label" for="service">Type of Service Required:</label>
-                        <input class="form-control" type="text" name="service" required /><br />
+                        <input class="form-control" type="text" name="service" required />
                         <br />
 
                         <label class="form-label" for="address">Address:</label>
-                        <input class="form-control" type="text" name="address" required /><br />
+                        <input class="form-control" type="text" name="address" required />
                         <br />
 
                         <label class="form-label" for="message">Message:</label>
-                        <textarea class="form-control" name="message" rows="4" required style="height: 10rem;"></textarea><br />
-                        <br />
+                        <textarea class="form-control" name="message" rows="4" required style="height: 10rem;"></textarea>
+                        <br /><br />
                         <?php
                           // Generate and display the captcha question
                           $captchaData = Captcha::generateQuestion();
                           echo '<label class="form-label" for="captcha">Captcha: What is ' . $captchaData["question"] . '?</label>';
                           echo '<input class="form-control" type="hidden" name="captchaAnswer" value="' . $captchaData["answer"] . '">';
                         ?>
-                        <input class="form-control" type="number" name="captcha" required /><br />
+                        <input class="form-control" type="number" name="captcha" required />
                         <br />
 
                         <button class="btn btn-danger mt-3" type="submit">Submit</button>

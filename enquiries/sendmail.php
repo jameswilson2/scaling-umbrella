@@ -25,16 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Captcha verification failed.");
     }
 
-    // Basic email validation
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email format.");
-    }
-
-    // Basic phone number validation
-    if (!preg_match("/^\d{10}$/", $phone)) {
-        die("Invalid phone number.");
-    }
-
     // Prevent HTML code insertion
     $name = htmlspecialchars($name);
     $email = htmlspecialchars($email);
@@ -52,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	$mail = new PHPMailer;
 	$mail->isSMTP(); 
-	$mail->SMTPDebug = 2; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
+	$mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
 	$mail->Host = $emailHost; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
 	$mail->Port = 25; // TLS only
 	$mail->SMTPSecure = false; // ssl is depracated
