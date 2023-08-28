@@ -39,6 +39,12 @@ function validateForm() {
         errorMessage += "Message is required.<br>";
     }
 
+    if (errorMessage !== "") {
+        displayError(errorMessage);
+        scrollToTop();
+        return false; // Cancel form submission
+    }
+
 }
 
 function validateEmail(email) {
@@ -64,3 +70,4 @@ function displayError(message) {
 function scrollToTop() {
     window.scrollTo(0, 0);
 }
+
