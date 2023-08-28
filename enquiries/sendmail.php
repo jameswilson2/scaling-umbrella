@@ -36,9 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$emailHost = "mail.kencomp.net";
 	$emailFrom = "enquires@kencomp.net";
 	$emailFromName = "Web Enquiry";
-	$emailTo = "james@me.aa4.co.uk";
+	$emailTo = "jameswilson2@kencomp.net";
 	$emailToName = "Kencomp Internet LTD";
-	$emailSubject = "New Contact Form Submission";;
+	$emailSubject = "New Web Form Submission";
 
 	$mail = new PHPMailer;
 	$mail->isSMTP(); 
