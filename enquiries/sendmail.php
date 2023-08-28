@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($message);
 
     // Send email
-    $to = "your@email.com"; // Replace with your email address
+    $to = "james@me.aa4.co.uk"; // Replace with your email address
     $subject = "New Contact Form Submission";
     $email_message = "Name: $name\nEmail: $email\nPhone: $phone\nService: $service\nAddress: $address\nMessage: $message";
 
@@ -51,6 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Include the new captcha question in the HTML form
-    include("../contact.html");
+    include("../contact.php");
 }
 ?>
