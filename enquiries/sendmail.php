@@ -79,8 +79,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$redirectUrl = $baseUrl . $pageName;
 	
 		// Redirect the user
-		header("Location: $redirectUrl");
-		exit; // Make sure to exit after sending the header
+		//header("Location: $redirectUrl");
+		//exit; // Make sure to exit after sending the header
+
+		echo $redirectUrl;
 	}
 
 }
