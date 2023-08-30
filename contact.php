@@ -1,9 +1,37 @@
 <?php require_once("library/captcha.php"); 
 
-if(isset($_GET['id'])){
-    echo $_GET['id'];
+$errorTable = array(
+    "1" => "Captcha verification failed.",
+    "2" => "There was an error in the form, please try again or get in contact with us.",
+    "3" => "Error 3: Yet another error.",
+);
+
+$successTable = array(
+    "1" => "Form is submitted, someone from the team will be in contact in due course.",
+);
+
+
+if (isset($_GET['e'])) {
+    $errorCode = $_GET['e'];
+
+    // Check if the error code exists in the table
+    if (array_key_exists($errorCode, $errorTable)) {
+        $errorMessage = $errorTable[$errorCode];
+    } else {
+        $errorMessage = "Error code not found.";
+    }
 }
 
+if (isset($_GET['s'])) {
+    $successCode = $_GET['s'];
+
+    // Check if the success code exists in the table
+    if (array_key_exists($successCode, $successTable)) {
+        $successMessage = $successTable[$successCode];
+    } else {
+        $successMessage = "Success code not found.";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,7 +125,16 @@ if(isset($_GET['id'])){
                     </p>
                 </div>
                 <div class="col-11 col-sm-6 col-md-5 ps-sm-4 mt-5 mt-sm-0">
-                    <div id="errorContainer" style="display: none; color: red;"></div>
+                        <?php 
+                            If($errorMessage){
+                                echo '<div id="errorContainer" style="display: none; color: red;">' . $errorMessage;
+                            } elseif ($successMessage){
+                                echo '<div id="errorContainer" style="display: none; color: green;">' . $successMessage;
+                            } else {
+                                echo '<div id="errorContainer" style="display: none; color: red;">';
+                            }
+                        ?>
+                    </div>
 
                     <form id="contactForm" action="enquiries/sendmail.php" method="post" onsubmit="return validateForm()" class="mb-5">
                         <label class="form-label" for="name">Name:</label>

@@ -1,5 +1,7 @@
 <?php
 
+$pageToRedirect = 'contact.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/PHPMailer.php';
@@ -22,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Captcha validation
     if ($userCaptcha != $captchaAnswer) {
-        die("Captcha verification failed.");
+		redirectToPage($pageToRedirect . '?e=1');
     }
 
     // Prevent HTML code insertion
@@ -56,9 +58,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
 	if(!$mail->send()){
-		echo "Mailer Error: " . $mail->ErrorInfo;
+		if (isset($_GET['d'])) {
+			$debugCode = $_GET['d'];
+			if($debugCode=1){
+				echo "Mailer Error: " . $mail->ErrorInfo;
+			} else {
+				redirectToPage($pageToRedirect . '?e=2');
+			}
+		}		
 	}else{
-		echo "Message sent!";
+		redirectToPage($pageToRedirect . '?s=1');
 	}
+	function redirectToPage($pageName) {
+		// Get the current protocol (http or https)
+		$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+	
+		// Get the current domain and path
+		$baseUrl = $protocol . $_SERVER['HTTP_HOST'] . '/';
+	
+		// Combine the base URL, desired page, and any additional argument
+		$redirectUrl = $baseUrl . $pageName;
+	
+		// Redirect the user
+		header("Location: $redirectUrl");
+		exit; // Make sure to exit after sending the header
+	}
+
 }
 ?>
