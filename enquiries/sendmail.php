@@ -1,7 +1,4 @@
 <?php
-
-$pageToRedirect = 'contact.php';
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/PHPMailer.php';
@@ -11,6 +8,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/Exception.php';
 
 // Include the Captcha class
 require_once $_SERVER['DOCUMENT_ROOT'] . '/library/captcha.php';
+
+$pageToRedirect = 'contact.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
