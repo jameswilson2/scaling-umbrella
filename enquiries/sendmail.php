@@ -20,10 +20,8 @@ function redirectToPage($pageName) {
 	$redirectUrl = $baseUrl . $pageName;
 
 	// Redirect the user
-	//header("Location: $redirectUrl");
-	//exit; // Make sure to exit after sending the header
-
-	echo $redirectUrl;
+	header("Location: $redirectUrl");
+	exit; // Make sure to exit after sending the header
 }
 
 $pageToRedirect = 'contact.php';
