@@ -9,6 +9,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/Exception.php';
 // Include the Captcha class
 require_once $_SERVER['DOCUMENT_ROOT'] . '/library/captcha.php';
 
+function redirectToPage($pageName) {
+	// Get the current protocol (http or https)
+	$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+
+	// Get the current domain and path
+	$baseUrl = $protocol . $_SERVER['HTTP_HOST'] . '/';
+
+	// Combine the base URL, desired page, and any additional argument
+	$redirectUrl = $baseUrl . $pageName;
+
+	// Redirect the user
+	//header("Location: $redirectUrl");
+	//exit; // Make sure to exit after sending the header
+
+	echo $redirectUrl;
+}
+
 $pageToRedirect = 'contact.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -68,22 +85,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}else{
 		redirectToPage($pageToRedirect . '?s=1');
 	}
-	function redirectToPage($pageName) {
-		// Get the current protocol (http or https)
-		$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
-	
-		// Get the current domain and path
-		$baseUrl = $protocol . $_SERVER['HTTP_HOST'] . '/';
-	
-		// Combine the base URL, desired page, and any additional argument
-		$redirectUrl = $baseUrl . $pageName;
-	
-		// Redirect the user
-		//header("Location: $redirectUrl");
-		//exit; // Make sure to exit after sending the header
-
-		echo $redirectUrl;
-	}
-
 }
 ?>
