@@ -1,4 +1,10 @@
-<?php require_once("library/captcha.php"); ?>
+<?php require_once("library/captcha.php"); 
+
+if(isset($_GET['id'])){
+    echo $_GET['id'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
