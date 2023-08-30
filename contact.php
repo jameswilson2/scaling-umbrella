@@ -127,9 +127,9 @@ if (isset($_GET['s'])) {
                 <div class="col-11 col-sm-6 col-md-5 ps-sm-4 mt-5 mt-sm-0">
                         <?php 
                             If($errorMessage){
-                                echo '<div id="errorContainer" style="display: none; color: red;">' . $errorMessage;
+                                echo '<div id="errorContainer" style="display: block; color: red;">' . $errorMessage;
                             } elseif ($successMessage){
-                                echo '<div id="errorContainer" style="display: none; color: green;">' . $successMessage;
+                                echo '<div id="errorContainer" style="display: block; color: green;">' . $successMessage;
                             } else {
                                 echo '<div id="errorContainer" style="display: none; color: red;">';
                             }
