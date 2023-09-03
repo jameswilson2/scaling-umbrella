@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$mail->addAddress($emailTo, $emailToName);
 	
 	if ($bccEmail !== "") {
-		$mail->addBCC($bccEmail)
+		$mail->addBCC($bccEmail);
 	}
 	
 	$mail->Subject = $emailSubject;
