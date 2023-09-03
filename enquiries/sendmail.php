@@ -5,6 +5,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/PHPMailer.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/SMTP.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/library/phpmailer/Exception.php';
 
+// Service routing
+$serviceTable = array(
+    "Support" => "support@kencomp.net",
+    "Sales" => "sales@kencomp.net",
+	"Accounts" => "accounts-group@kencomp.net",
+	"Other" => "sales@kencomp.net"
+);
+
+
 
 // Include the Captcha class
 require_once $_SERVER['DOCUMENT_ROOT'] . '/library/captcha.php';
@@ -52,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$emailHost = "mail.kencomp.net";
 	$emailFrom = "enquires@kencomp.net";
 	$emailFromName = "Web Enquiry";
-	$emailTo = "jameswilson2@kencomp.net";
+	$emailTo = $serviceTable[htmlspecialchars($service)];
 	$emailToName = "Kencomp Internet LTD";
 	$emailSubject = "New Web Form Submission";
 
@@ -66,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$mail->setFrom($emailFrom, $emailFromName);
 	$mail->addAddress($emailTo, $emailToName);
 	$mail->Subject = $emailSubject;
-	$mail->msgHTML("Name: $name\nEmail: $email\nPhone: $phone\nService: $service\nAddress: $address\nMessage: $message"); //$mail->msgHTML(file_get_contents('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
+	$mail->msgHTML("Name: $name <br> Email: $email <br> Phone: $phone <br> Service: $service <br> Address: $address <br> Message: $message");
 	$mail->AltBody = 'HTML messaging not supported';
 
 
