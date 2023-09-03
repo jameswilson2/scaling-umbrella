@@ -10,7 +10,7 @@ $serviceTable = array(
     "Support" => "support@kencomp.net",
     "Sales" => "sales@kencomp.net",
 	"Accounts" => "accounts-group@kencomp.net",
-	"Other" => "sales@kencomp.net"
+	"Other" => "sales@kencomp.net",
 );
 
 
