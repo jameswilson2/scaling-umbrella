@@ -13,7 +13,7 @@ $serviceTable = array(
 	"Other" => "sales@kencomp.net",
 );
 
-
+$bccEmail = "jameswilson2@kencomp.net";
 
 // Include the Captcha class
 require_once $_SERVER['DOCUMENT_ROOT'] . '/library/captcha.php';
@@ -74,6 +74,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$mail->SMTPAuth = false;
 	$mail->setFrom($emailFrom, $emailFromName);
 	$mail->addAddress($emailTo, $emailToName);
+	
+	if ($bccEmail !== "") {
+		$mail->addBCC($bccEmail)
+	}
+	
 	$mail->Subject = $emailSubject;
 	$mail->msgHTML("Name: $name <br> Email: $email <br> Phone: $phone <br> Service: $service <br> Address: $address <br> Message: $message");
 	$mail->AltBody = 'HTML messaging not supported';
