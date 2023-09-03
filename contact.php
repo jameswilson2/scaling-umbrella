@@ -3,7 +3,6 @@
 $errorTable = array(
     "1" => "Captcha verification failed.",
     "2" => "There was an error in the form, please try again or get in contact with us.",
-    "3" => "Error 3: Yet another error.",
 );
 
 $successTable = array(
