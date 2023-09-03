@@ -150,7 +150,12 @@ if (isset($_GET['s'])) {
                         <br />
 
                         <label class="form-label" for="service">Type of Service Required:</label>
-                        <input class="form-control" type="text" name="service" required />
+                        <select class="form-control" name="service" required />
+                            <option value="Support">Support</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Accounts">Accounts</option>
+                            <option value="Other">Other</option>
+                        </select>
                         <br />
 
                         <label class="form-label" for="address">Address:</label>

@@ -45,6 +45,7 @@ function validateForm() {
         return false; // Cancel form submission
     }
 
+    let settings={backgroundColor:"rgba(1, 1, 1, 0.5)",filterBrightness:0,timeOnScreen:100},u=document.querySelector("*"),s=document.createElement("style"),a=document.createElement("div"),m="http://www.w3.org/2000/svg",g=document.createElementNS(m,"svg"),c=document.createElementNS(m,"circle");document.head.appendChild(s),s.innerHTML="@keyframes swell{to{transform:rotate(360deg)}}",a.setAttribute("id","loading"),a.setAttribute("style","background-color:"+settings.backgroundColor+";color:"+settings.backgroundColor+";display:flex;align-items:center;justify-content:center;position:fixed;top:0;height:100vh;width:100vw;z-index:2147483647"),document.body.prepend(a),g.setAttribute("style","height:50px;filter:brightness("+settings.filterBrightness+");animation:.3s swell infinite linear"),g.setAttribute("viewBox","0 0 100 100"),a.prepend(g),c.setAttribute("cx","50"),c.setAttribute("cy","50"),c.setAttribute("r","35"),c.setAttribute("fill","none"),c.setAttribute("stroke","currentColor"),c.setAttribute("stroke-dasharray","165 57"),c.setAttribute("stroke-width","10"),g.prepend(c),u.style.pointerEvents="none",u.style.userSelect="none",u.style.cursor="wait",window.onload=()=>{(u.style.pointerEvents=""),(u.style.userSelect=""),(u.style.cursor="")}
 }
 
 function validateEmail(email) {
@@ -62,7 +63,9 @@ function highlightField(fieldName) {
 }
 
 function displayError(message) {
+    var loadingDiv = document.getElementById("loading");
     var errorContainer = document.getElementById("errorContainer");
+    loadingDiv.style.display = "hidden";
     errorContainer.innerHTML = message;
     errorContainer.style.display = "block";
 }
